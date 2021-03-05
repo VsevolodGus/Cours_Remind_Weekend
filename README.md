@@ -4,8 +4,11 @@
 Составление списка дела на день, изменинение , удаление и сохранением в памяти жесткого диска 
 ## Технологии
  - **C#**
- - **WPF.NET Framework**
- - **JSON** 
+ - **.NET **
+ - **API** Веб Сервис ЦБ РФ - 
+
+![hippo](https://media.giphy.com/media/atro6TxBBn6RVvSmbD/giphy.gif)
+
   
 
 
