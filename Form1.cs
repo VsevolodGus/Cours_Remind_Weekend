@@ -23,7 +23,7 @@ namespace Cours_Remind_Weekened
         private void Courses_Click(object sender, EventArgs e)
         {
             if (Select_Valutes == null || Select_Valutes.IsDisposed)
-                Select_Valutes = new Courses_Valutes();
+                Select_Valutes = new Courses_Valutes(); // открывает новое окно
              
             if (!Select_Valutes.Visible)
                 Select_Valutes.Show();
@@ -35,7 +35,7 @@ namespace Cours_Remind_Weekened
                 Napomn = new Remind_Date();
             
             if(!Napomn.Visible)
-                Napomn.Show();
+                Napomn.Show(); // 
         }
 
         
