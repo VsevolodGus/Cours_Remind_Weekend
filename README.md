@@ -6,7 +6,7 @@
 ## Технологии
  - **C#**
  - **.NET Framework**
- - ** API Веб-сервиса ЦБ РФ - http://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx**
+ - **API Веб-сервиса ЦБ РФ** - http://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx
   
 ## Демонстрация работы
 
