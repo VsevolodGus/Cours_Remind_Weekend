@@ -47,7 +47,7 @@ namespace Cours_Remind_Weekened
             this.Courses.Name = "Courses";
             this.Courses.Size = new System.Drawing.Size(150, 100);
             this.Courses.TabIndex = 0;
-            this.Courses.Text = "Узнать курс валют";
+            this.Courses.Text = "Узнать курс драгоценных металлов ";
             this.Courses.UseVisualStyleBackColor = true;
             this.Courses.Click += new System.EventHandler(this.Courses_Click);
             // 
