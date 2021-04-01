@@ -5,7 +5,7 @@
 ## Технологии
  - **C#**
  - .NET
- - **API** Веб Сервис ЦБ РФ - 
+ - **API** Веб Сервис ЦБ РФ 
 
 ![hippo](https://media.giphy.com/media/atro6TxBBn6RVvSmbD/giphy.gif)
 
