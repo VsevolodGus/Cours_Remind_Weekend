@@ -17,10 +17,7 @@ namespace Cours_Remind_Weekened
             InitializeComponent();
         }
 
-        private void End_Rest(object sender, FormClosedEventArgs e)
-        {
-            
-        }
+        
         private int Left_Days()
         {
             return 7 - Convert.ToInt32(DateTime.Now.DayOfWeek);
@@ -29,34 +26,27 @@ namespace Cours_Remind_Weekened
         {
             Days.Text = "";
 
-                if (DateTime.Now.DayOfWeek.ToString() == "Monday")
-                {
-                    Days.Text = Convert.ToString(Left_Days());
-                }
-                else if (DateTime.Now.DayOfWeek.ToString() == "Tuesday")
-                {
-                    Days.Text = Convert.ToString(Left_Days());
-                }
-                else if (DateTime.Now.DayOfWeek.ToString() == "Wednesday")
-                {
-                    Days.Text = Convert.ToString(Left_Days());
-                }
-                else if (DateTime.Now.DayOfWeek.ToString() == "Thursday")
-                {
+            
+            if (DateTime.Now.DayOfWeek.ToString() == "Thursday")
+            {
                 Days.Text = "После завтра";
-                }
-                else if (DateTime.Now.DayOfWeek.ToString() == "Friday")
-                {
-                    Days.Text = "Завтра";
-                }
-                else if (DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday")
-                {
-                    Days.Text = "Уже начались!";
-                }
-
-                if (DateTime.Now.DayOfWeek.ToString() != "Thursday" && DateTime.Now.DayOfWeek.ToString() != "Friday" &&
-                    DateTime.Now.DayOfWeek.ToString() != "Saturday" && DateTime.Now.DayOfWeek.ToString() != "Sunday")
-                        Days.Text += " дней";
             }
+            else if (DateTime.Now.DayOfWeek.ToString() == "Friday")
+            {
+                Days.Text = "Завтра";
+            }
+            else if (DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday")
+            {
+                Days.Text = "Уже начались!";
+            }
+            else
+            {
+                Days.Text = Convert.ToString(Left_Days());
+            }
+
+            if (DateTime.Now.DayOfWeek.ToString() != "Thursday" && DateTime.Now.DayOfWeek.ToString() != "Friday" &&
+                DateTime.Now.DayOfWeek.ToString() != "Saturday" && DateTime.Now.DayOfWeek.ToString() != "Sunday")
+                Days.Text += " дней";
+        }
     }
 }
